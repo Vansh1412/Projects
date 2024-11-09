@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmation - Logictech Computers</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Same CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">Logictech Computers</div>
+      <form class="example" action="action_page.php">
+        <input type="text" placeholder="Search products...." />
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+
+      <nav>
+        <ul>
+          <li><a href="index1.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="order-confirmation">
+      <h1>Thank You for Your Order!</h1>
+      <p>
+        Your order has been successfully placed. We will notify you once your
+        items are shipped.
+      </p>
+      <div class="order-details">
+        <h3>Order Summary</h3>
+        <p><strong>Order ID:</strong> <span id="order-id">#ORDER_ID</span></p>
+        <p>
+          <strong>Payment ID:</strong> <span id="payment-id">#PAYMENT_ID</span>
+        </p>
+        <p><strong>Total Amount:</strong> ₹500</p>
+        <p><strong>Items Purchased:</strong></p>
+        <ul>
+          <li>Item 1: Keyboard</li>
+          <li>Item 2: Mouse</li>
+          <li>Item 3: Monitor</li>
+        </ul>
+      </div>
+
+      <div class="order-actions">
+        <a href="index1.html" class="btn">Back to Home</a>
+        <a href="products.html" class="btn">Continue Shopping</a>
+      </div>
+    </section>
+
+    <footer class="footer-grid">
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: logitech_hsp@rediffmail.com</p>
+        <p>Phone: +91 98720-76067</p>
+      </div>
+      <div class="footer-section">
+        <p>&copy; 2024 Logictech Computers | All Rights Reserved</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <a href="#"
+          ><img src="facebook_icon.png" alt="Facebook" id="logoa"
+        /></a>
+        <a href="#"><img src="twitter-icon.png" alt="Twitter" id="logoa" /></a>
+      </div>
+    </footer>
+
+    <script>
+      // Here you can dynamically insert Razorpay Order ID and Payment ID if available
+      document.getElementById("order-id").textContent = "ORD123456";
+      document.getElementById("payment-id").textContent = "PAY123456789";
+    </script>
+  </body>
+</html>

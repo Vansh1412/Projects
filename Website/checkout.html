@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - Logictech Computers</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Same CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <!-- Razorpay JS -->
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">Logictech Computers</div>
+      <form class="example" action="action_page.php">
+        <input type="text" placeholder="Search products...." />
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
+
+      <nav>
+        <ul>
+          <li><a href="index1.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="payment-content">
+      <h1>Complete Your Payment</h1>
+
+      <!-- Razorpay Button -->
+      <button id="razorpay-button" class="btn">Pay with Razorpay</button>
+
+      <h3>OR</h3>
+
+      <!-- QR Code -->
+      <p>Scan the QR code below to make a payment:</p>
+      <img src="qrcode.jpg" alt="QR Code" class="qr-code" />
+      <br />
+      <a
+        href="order-confirm.html"
+        class="btn"
+        style="margin-top: 20px; align-items: center"
+        >Proceed to Confirmation</a
+      >
+    </section>
+
+    <footer class="footer-grid">
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Email: logitech_hsp@rediffmail.com</p>
+        <p>Phone: +91 98720-76067</p>
+      </div>
+      <div class="footer-section">
+        <p>&copy; 2024 Logictech Computers | All Rights Reserved</p>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Us</h3>
+        <a href="#"
+          ><img src="facebook_icon.png" alt="Facebook" id="logoa"
+        /></a>
+        <a href="#"><img src="twitter-icon.png" alt="Twitter" id="logoa" /></a>
+      </div>
+    </footer>
+
+    <script>
+      var options = {
+        key: "YOUR_RAZORPAY_API_KEY", // Replace with your Razorpay key
+        amount: 50000, // Example amount in paise (50000 paise = ₹500)
+        currency: "INR",
+        name: "Logictech Computers",
+        description: "Test Transaction",
+        image: "https://www.logictech.com/logo.png",
+        order_id: "ORDER_ID", // You'll need to generate this dynamically from your server
+        handler: function (response) {
+          alert(
+            "Payment successful! Payment ID: " + response.razorpay_payment_id
+          );
+          // You can redirect to an order confirmation page
+          window.location.href = "order-confirm.html";
+        },
+        prefill: {
+          name: "Customer Name",
+          email: "customer@example.com",
+          contact: "9999999999",
+        },
+        theme: {
+          color: "#F8B400",
+        },
+      };
+
+      var rzp1 = new Razorpay(options);
+      document.getElementById("razorpay-button").onclick = function (e) {
+        rzp1.open();
+        e.preventDefault();
+      };
+    </script>
+  </body>
+</html>

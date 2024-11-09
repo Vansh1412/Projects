@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logictech Computers Banner</title>
+    <style>
+      /* Resetting default margins and paddings */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Background styling */
+      body,
+      html {
+        height: 100%;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #1d2b64,
+          #f8cdda
+        ); /* Add gradient for modern look */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .banner-container {
+        width: 80%;
+        max-width: 1200px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        color: #fff;
+        padding: 2rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+        animation: slideIn 1.5s ease-in-out;
+      }
+
+      /* Animation */
+      @keyframes slideIn {
+        from {
+          transform: translateY(-100%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      /* Banner Heading */
+      .banner-title1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+        color:rgb(250, 89, 80);
+      }
+      .banner-title2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+        color:rgb(254, 225, 153);
+      }
+
+      /* Subheading and offers */
+      .banner-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: #ffd700;
+      }
+
+      .offers-list {
+        list-style-type: none;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .offers-list li {
+        margin: 0.5rem 0;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Call to Action Button */
+      .cta-button {
+        display: inline-block;
+        padding: 0.75rem 2rem;
+        font-size: 1.2rem;
+        background-color: #ffd700;
+        color: #1d2b64;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+      }
+
+      .cta-button:hover {
+        transform: scale(1.1);
+      }
+
+      /* Background animation */
+      .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-image: url("https://source.unsplash.com/1200x800/?computer,technology");
+        background-size: cover;
+        background-position: center;
+        opacity: 0.3;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="banner-container">
+      <div class="background"></div>
+      <p class="banner-title1">
+        Welcome to </p>
+        <p class="banner-title2">Logictech Computers</p>
+      </h1>
+      <p class="banner-subtitle">Your One-Stop Shop for All Tech Needs!</p>
+
+      <ul class="offers-list">
+        <li>🔥 Special Discounts on Laptops & Accessories!</li>
+        <li>💻 Custom PC Builds with Free Consultation</li>
+        <li>🛠 Expert Repair Services - Fast and Reliable</li>
+        <li>📱 Latest Gadgets & Accessories at Unbeatable Prices</li>
+      </ul>
+
+      <button class="cta-button" onclick="location.href='index1.html'">
+        Visit Us Today!
+      </button>
+    </div>
+  </body>
+</html>
