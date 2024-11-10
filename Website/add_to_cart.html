@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Logictech Computers</title>
+    <title>Cart - Logictech Computers</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -28,14 +28,16 @@
     </header>
 
     <section class="cart-content">
-      <h1 style="text-align: center">Your Cart</h1>
-      <br />
-      <p style="text-align: center; font-weight: bold; font-size: em">
-        You have added a product to your cart. Click
-        <a href="contact.html" class="btn">Proceed to Buy</a> to complete your
-        purchase.
+      <h1>Your Cart</h1>
+      <p id="cart-message" style="font-weight: bold">
+        You have <span id="cart-count">0</span> products in your cart.
       </p>
+      <button onclick="addToCart()" class="btn">Add to Cart</button>
+      <a href="checkout.html" class="btn" style="margin-top: 10px"
+        >Proceed to Buy</a
+      >
     </section>
+
     <footer class="footer-grid">
       <div class="footer-section">
         <h3>Contact Us</h3>
@@ -53,5 +55,17 @@
         <a href="#"><img src="twitter-icon.png" alt="Twitter" id="logoa" /></a>
       </div>
     </footer>
+
+    <script>
+      let cartCount = 0;
+
+      function addToCart() {
+        cartCount++;
+        document.getElementById("cart-count").textContent = cartCount;
+        document.getElementById(
+          "cart-message"
+        ).textContent = `You have ${cartCount} product(s) in your cart.`;
+      }
+    </script>
   </body>
 </html>
