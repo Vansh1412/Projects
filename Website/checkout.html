@@ -12,16 +12,46 @@
     />
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <!-- Razorpay JS -->
+    <script>
+      function searchProduct() {
+        const searchQuery = document
+          .getElementById("search-input")
+          .value.toLowerCase()
+          .trim();
+
+        // Define product pages or sections (you can customize the URLs based on your actual pages)
+        const productPages = {
+          keyboard: "keyboards.html",
+          mouse: "mice.html",
+          monitor: "monitors.html",
+          printer: "printers.html",
+          cctvs: "cameras.html",
+          accessories: "accessories.html",
+
+          // Add more products as needed
+        };
+
+        // Check if the search query matches a product
+        if (productPages[searchQuery]) {
+          // Redirect to the specific product page
+          window.location.href = productPages[searchQuery];
+        } else {
+          alert("Product not found. Please try searching for another item.");
+        }
+      }
+    </script>
   </head>
 
   <body>
     <header>
       <div class="logo">Logictech Computers</div>
-      <form class="example" action="action_page.php">
-        <input type="text" placeholder="Search products...." />
+      <form
+        class="search-form"
+        onsubmit="event.preventDefault(); searchProduct();"
+      >
+        <input type="text" placeholder="Search products..." id="search-input" />
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
-
       <nav>
         <ul>
           <li><a href="index1.html">Home</a></li>

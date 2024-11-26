@@ -9,12 +9,43 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script>
+      function searchProduct() {
+        const searchQuery = document
+          .getElementById("search-input")
+          .value.toLowerCase()
+          .trim();
+
+        // Define product pages or sections (you can customize the URLs based on your actual pages)
+        const productPages = {
+          keyboard: "keyboards.html",
+          mouse: "mice.html",
+          monitor: "monitors.html",
+          printer: "printers.html",
+          cctvs: "cameras.html",
+          accessories: "accessories.html",
+
+          // Add more products as needed
+        };
+
+        // Check if the search query matches a product
+        if (productPages[searchQuery]) {
+          // Redirect to the specific product page
+          window.location.href = productPages[searchQuery];
+        } else {
+          alert("Product not found. Please try searching for another item.");
+        }
+      }
+    </script>
   </head>
   <body>
     <header>
       <div class="logo">Logictech Computers</div>
-      <form class="search-form" action="action_page.php">
-        <input type="text" placeholder="Search products..." />
+      <form
+        class="search-form"
+        onsubmit="event.preventDefault(); searchProduct();"
+      >
+        <input type="text" placeholder="Search products..." id="search-input" />
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
       <nav>
@@ -52,14 +83,18 @@
             <img src="monitor.jpg" alt="Monitors" width="150px" />
           </a>
         </div>
+
         <div class="product-category">
           <h2>Printers</h2>
           <a href="printers.html">
-            <img src="printer.jpg" alt="Printers" width="150px" />
+            <img src="printer.jpg" alt="Printers" width="160px" />
+          </a>
         </div>
         <div class="product-category">
-          <h2>CCTV Camera</h2>
-          <a href="cameras.html"><img src="camera.jpg" alt="Cameras" width="150px"/></a>
+          <h2>Cameras</h2>
+          <a href="cameras.html">
+            <img src="camera.jpg" alt="Cameras" width="160px" />
+          </a>
         </div>
         <div class="product-category">
           <h2>Accessories</h2>
@@ -67,7 +102,6 @@
             <img src="accessories.jpg" alt="Accessories" width="150px" />
           </a>
         </div>
-       
       </div>
     </section>
 

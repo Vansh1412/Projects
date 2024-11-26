@@ -9,13 +9,39 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <script>
+      function searchProduct() {
+        const searchQuery = document
+          .getElementById("search-input")
+          .value.toLowerCase()
+          .trim();
+
+        const productPages = {
+          keyboard: "keyboards.html",
+          mouse: "mice.html",
+          monitor: "monitors.html",
+          printer: "printers.html",
+          cctvs: "cameras.html",
+          accessories: "accessories.html",
+        };
+
+        if (productPages[searchQuery]) {
+          window.location.href = productPages[searchQuery];
+        } else {
+          alert("Product not found. Please try searching for another item.");
+        }
+      }
+    </script>
   </head>
   <body>
     <!-- Header -->
     <header>
       <div class="logo">Logictech Computers</div>
-      <form class="search-form" action="action_page.php">
-        <input type="text" placeholder="Search products..." />
+      <form
+        class="search-form"
+        onsubmit="event.preventDefault(); searchProduct();"
+      >
+        <input type="text" placeholder="Search products..." id="search-input" />
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
       <nav>
@@ -23,6 +49,7 @@
           <li><a href="index1.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="products.html">Products</a></li>
+          <li><a href="login.html" class="login-button">Login</a></li>
         </ul>
       </nav>
     </header>
@@ -30,6 +57,7 @@
     <!-- Main Content -->
     <section class="home-content">
       <h1>Welcome to Logictech Computers</h1>
+      <br />
       <p class="pcpar">
         Your one-stop shop for the latest in computer technology, components,
         and accessories.
@@ -67,17 +95,6 @@
       </ul>
     </section>
 
-    <!-- Footer -->
-    <!-- <div class="footer-bottom">
-      <a href="#"><img src="facebook_icon.png" alt="Facebook" id="logoa" /></a>
-      <a href="#"><img src="twitter-icon.png" alt="Twitter" id="logoa" /></a>
-      <p>&copy; 2024 Logictech Computers | All Rights Reserved</p>
-      <div class="footer-section newsletter">
-        <h3>Subscribe to Our Newsletter</h3>
-        <input type="email" placeholder="Enter your email" />
-        <button>Subscribe</button>
-      </div>
-    </div> -->
     <footer class="footer-grid">
       <div class="footer-section">
         <h3>Contact Us</h3>

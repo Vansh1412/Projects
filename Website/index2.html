@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cart - Logictech Computers</title>
+    <title>Logictech Computers</title>
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -16,7 +16,6 @@
           .value.toLowerCase()
           .trim();
 
-        // Define product pages or sections (you can customize the URLs based on your actual pages)
         const productPages = {
           keyboard: "keyboards.html",
           mouse: "mice.html",
@@ -24,13 +23,9 @@
           printer: "printers.html",
           cctvs: "cameras.html",
           accessories: "accessories.html",
-
-          // Add more products as needed
         };
 
-        // Check if the search query matches a product
         if (productPages[searchQuery]) {
-          // Redirect to the specific product page
           window.location.href = productPages[searchQuery];
         } else {
           alert("Product not found. Please try searching for another item.");
@@ -38,8 +33,8 @@
       }
     </script>
   </head>
-
   <body>
+    <!-- Header -->
     <header>
       <div class="logo">Logictech Computers</div>
       <form
@@ -58,15 +53,45 @@
       </nav>
     </header>
 
-    <section class="cart-content">
-      <h1>Your Cart</h1>
-      <p id="cart-message" style="font-weight: bold">
-        You have <span id="cart-count">0</span> products in your cart.
+    <!-- Main Content -->
+    <section class="home-content">
+      <h1>Welcome to Logictech Computers</h1>
+      <br />
+      <p class="pcpar">
+        Your one-stop shop for the latest in computer technology, components,
+        and accessories.
       </p>
-      <button onclick="addToCart()" class="btn">Add to Cart</button>
-      <a href="checkout.html" class="btn" style="margin-top: 10px"
-        >Proceed to Buy</a
-      >
+      <a href="products.html" class="btn">Browse Products</a>
+    </section>
+
+    <section class="home-para">
+      <h2>Some Amazing Things We Offer:</h2>
+      <ul class="home-list">
+        <li>
+          <b>Extensive Product Range:</b> Explore our vast selection of computer
+          hardware components...
+        </li>
+        <li>
+          <b>Expert Guidance:</b> Our knowledgeable staff is here to help you
+          find what you need.
+        </li>
+        <li>
+          <b>Competitive Pricing:</b> Enjoy competitive prices and regular
+          promotions.
+        </li>
+        <li>
+          <b>Quality Assurance:</b> Sourced from trusted brands for reliable
+          performance.
+        </li>
+        <li>
+          <b>Fast and Secure Shipping:</b> Quick delivery to get you up and
+          running.
+        </li>
+        <li>
+          <b>Community and Support:</b> Join our community and gain access to
+          tutorials and forums.
+        </li>
+      </ul>
     </section>
 
     <footer class="footer-grid">
@@ -80,23 +105,11 @@
       </div>
       <div class="footer-section">
         <h3>Follow Us</h3>
-        <a href="#"
+        <a href="https://www.facebook.com/rahul.chopra.50596/"
           ><img src="facebook_icon.png" alt="Facebook" id="logoa"
         /></a>
         <a href="#"><img src="twitter-icon.png" alt="Twitter" id="logoa" /></a>
       </div>
     </footer>
-
-    <script>
-      let cartCount = 0;
-
-      function addToCart() {
-        cartCount++;
-        document.getElementById("cart-count").textContent = cartCount;
-        document.getElementById(
-          "cart-message"
-        ).textContent = `You have ${cartCount} product(s) in your cart.`;
-      }
-    </script>
   </body>
 </html>
